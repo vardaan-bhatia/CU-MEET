@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Github, Menu } from "lucide-react"; // Importing GitHub and Menu icons from Lucide
+import { Github, Menu, XCircle } from "lucide-react"; // Importing GitHub and Menu icons from Lucide
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,9 +36,15 @@ const Navbar = () => {
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="text-white">
-            <Menu size={28} />
-          </button>
+          {isOpen ? (
+            <button onClick={toggleMenu} className="text-white">
+              <XCircle size={28} />
+            </button>
+          ) : (
+            <button onClick={toggleMenu} className="text-white">
+              <Menu size={28} />
+            </button>
+          )}
         </div>
       </div>
 

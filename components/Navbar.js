@@ -58,7 +58,7 @@ const Navbar = () => {
             Create Room
           </button>
           <a
-            href="https://github.com/your-repo-url"
+            href="https://github.com/vardaan-bhatia/CU-MEET"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white transition duration-200 hover:text-gray-400"

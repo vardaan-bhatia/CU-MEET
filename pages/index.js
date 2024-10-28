@@ -7,14 +7,15 @@ import SignupFormDemo from "@/components/example/signup-form-demo";
 import { useEffect } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useSocket } from "@/context/socketContext";
+import { usePeer } from "@/hooks/usePeer";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const socket = useSocket();
-
+  usePeer();
   useEffect(() => {
     socket?.on("connect", () => {
-      console.log(socket.id);
+      console.log("socket id", socket.id);
     });
   }, [socket]);
 

@@ -1,14 +1,22 @@
 import { useState } from "react";
 import Navbar from "@/components/navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { Video, Plus, X, TvMinimalPlay } from "lucide-react"; // Importing icons
+import { Video, Plus, X } from "lucide-react"; // Importing icons
 import { people } from "@/lib/people";
 import SignupFormDemo from "@/components/example/signup-form-demo";
 import { useEffect } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { useSocket } from "@/context/socketContext";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const socket = useSocket();
+
+  useEffect(() => {
+    socket?.on("connect", () => {
+      console.log(socket.id);
+    });
+  }, [socket]);
 
   const handleInput = () => {
     setIsModalOpen(true);
@@ -51,7 +59,7 @@ export default function Home() {
               </a>
             </span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-5">
             <button
               onClick={handleInput}
               className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-200 text-black font-semibold text-lg transition transform duration-200 ease-in-out hover:bg-transparent hover:text-white hover:shadow-lg"

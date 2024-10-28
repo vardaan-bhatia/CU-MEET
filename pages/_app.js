@@ -1,10 +1,12 @@
 import Head from "next/head";
 import "@/styles/globals.css";
-import Navbar from "@/components/navbar";
+import { SocketProvider } from "@/context/socketContext";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <SocketProvider>
+      {" "}
+      {/* Update here */}
       <Head>
         <title>CU-Meet - Video Conferencing Platform</title>
         <meta
@@ -19,6 +21,6 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </SocketProvider>
   );
 }

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Github, Menu, XCircle } from "lucide-react"; // Importing GitHub and Menu icons from Lucide
+import Modal from "./modal";
+import { useModal } from "@/context/modalContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { openModal } = useModal();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,7 +21,10 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <button className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded">
+          <button
+            className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded"
+            onClick={openModal}
+          >
             Join Room
           </button>
           <button className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded">
@@ -33,6 +39,7 @@ const Navbar = () => {
             <Github size={26} />
           </a>
         </div>
+        <Modal />
 
         {/* Mobile Menu Icon */}
         <div className="md:hidden flex items-center">
@@ -50,13 +57,20 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 flex flex-col items-center space-y-4 bg-gray-800 p-4 rounded-lg">
-          <button className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded">
+        <div
+          className="md:hidden mt-5 flex flex-col items-center space-y-4 bg-black p-4 rounded-lg shadow-2xl"
+          onClick={toggleMenu}
+        >
+          <button
+            className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"
+            onClick={openModal}
+          >
             Join Room
           </button>
           <button className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded">
             Create Room
           </button>
+          <Modal />
           <a
             href="https://github.com/vardaan-bhatia/CU-MEET"
             target="_blank"

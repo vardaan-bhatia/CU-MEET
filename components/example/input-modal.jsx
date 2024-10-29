@@ -15,7 +15,7 @@ export default function InputModal({ onClose }) {
 
   return (
     <div className="max-w-md w-full mx-auto">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+      <h2 className="font-bold text-xl  text-neutral-800 dark:text-neutral-200">
         Join a Room
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">

@@ -2,20 +2,34 @@ import React, { useState } from "react";
 import { Github, Menu, XCircle } from "lucide-react"; // Importing GitHub and Menu icons from Lucide
 import Modal from "./modal";
 import { useModal } from "@/context/modalContext";
+import { useRouter } from "next/navigation";
+import { v4 as uuidv4 } from "uuid";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { openModal } = useModal();
+  const router = useRouter();
+
+  const createRoom = () => {
+    const roomId = uuidv4();
+    router.push(`/${roomId}`);
+  };
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  const handleRefresh = () => {
+    window.location.reload();
   };
 
   return (
     <nav className="fixed top-0 left-0 w-full p-6 z-50 font-sans">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-gray-200 text-2xl md:text-3xl font-bold">
+        <h1
+          className="text-gray-200 text-2xl md:text-3xl font-bold cursor-pointer"
+          onClick={handleRefresh}
+        >
           CU-Meet.
         </h1>
 
@@ -27,7 +41,10 @@ const Navbar = () => {
           >
             Join Room
           </button>
-          <button className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded">
+          <button
+            className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded"
+            onClick={createRoom}
+          >
             Create Room
           </button>
           <a
@@ -67,7 +84,10 @@ const Navbar = () => {
           >
             Join Room
           </button>
-          <button className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded">
+          <button
+            className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"
+            onClick={createRoom}
+          >
             Create Room
           </button>
           <Modal />

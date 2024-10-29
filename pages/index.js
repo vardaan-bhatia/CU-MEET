@@ -3,7 +3,7 @@ import Navbar from "@/components/navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Video, Plus, X } from "lucide-react"; // Importing icons
 import { people } from "@/lib/people";
-import SignupFormDemo from "@/components/example/signup-form-demo";
+import InputModal from "@/components/example/input-modal";
 import { useEffect } from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useSocket } from "@/context/socketContext";
@@ -82,7 +82,7 @@ export default function Home() {
             className="fixed inset-0 flex items-center justify-center backdrop-blur-sm bg-opacity-80 z-50 transition-opacity duration-300"
           >
             <div className="relative bg-white dark:bg-black rounded-lg shadow-lg p-6">
-              <SignupFormDemo onClose={closeModal} />
+              <InputModal onClose={closeModal} />
               <button
                 onClick={closeModal}
                 aria-label="Close Modal"

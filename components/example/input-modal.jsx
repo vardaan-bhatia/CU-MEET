@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { HeadsetIcon } from "lucide-react";
 
-export default function SignupFormDemo({ onClose }) {
+export default function InputModal({ onClose }) {
   const [roomId, setRoomId] = useState("");
 
   const handleSubmit = (e) => {

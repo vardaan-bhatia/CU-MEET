@@ -1,3 +1,4 @@
+// Room.js
 import React from "react";
 import { useSocket } from "@/context/socketContext";
 import { usePeer } from "@/hooks/usePeer";
@@ -7,12 +8,11 @@ import { Player } from "@/components/player";
 const Room = () => {
   const socket = useSocket();
   const { peer, peerID } = usePeer();
-
   const { stream } = useMediaStream();
 
   return (
     <div>
-      <Player url={stream} muted={true} playing playerId={peerID} />
+      <Player stream={stream} muted={true} playing playerId={peerID} />
     </div>
   );
 };

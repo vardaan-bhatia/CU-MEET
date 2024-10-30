@@ -1,8 +1,8 @@
+// useMediaStream.js
 import { useState, useEffect, useRef } from "react";
 
 const useMediaStream = () => {
   const [stream, setStream] = useState(null);
-  const [streamUrl, setStreamUrl] = useState(null);
   const isStreamInitialized = useRef(false);
 
   useEffect(() => {
@@ -14,8 +14,6 @@ const useMediaStream = () => {
         });
         console.log("Initializing media stream...");
         setStream(mediaStream);
-        const url = URL.createObjectURL(mediaStream);
-        setStreamUrl(url);
       } catch (error) {
         console.error("Error accessing media devices:", error);
       }
@@ -26,19 +24,16 @@ const useMediaStream = () => {
       initStream();
     }
 
-    // Cleanup function to stop all tracks and revoke URL when the component unmounts
+    // Cleanup function to stop all tracks when the component unmounts
     return () => {
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
         console.log("Media stream stopped");
       }
-      if (streamUrl) {
-        URL.revokeObjectURL(streamUrl);
-      }
     };
-  }, [stream, streamUrl]);
+  }, [stream]);
 
-  return { stream, streamUrl };
+  return { stream };
 };
 
 export default useMediaStream;

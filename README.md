@@ -3,7 +3,7 @@
 CU-Meet is a seamless video conferencing platform currently in development. It is designed for effortless connection, collaboration, and communication. Whether you're meeting friends or collaborating with colleagues, CU-Meet aims to provide a user-friendly experience tailored to all your video conferencing needs.
 
 ![image](https://github.com/user-attachments/assets/e128e1db-6160-4ebd-a9e3-89e644646722)
-
+![flowhart](image.png)
 
 ## Project Status
 

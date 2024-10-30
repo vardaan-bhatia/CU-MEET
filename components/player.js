@@ -1,11 +1,16 @@
+// Player.js
 import ReactPlayer from "react-player";
 import React from "react";
 
-export const Player = (props) => {
-  const { playerId, url, muted, playing } = props;
+export const Player = ({ playerId, stream, muted, playing }) => {
   return (
     <div>
-      <ReactPlayer url={url} muted={muted} playing={playing} key={playerId} />
+      <ReactPlayer
+        url={stream}
+        muted={muted}
+        playing={playing}
+        key={playerId}
+      />
     </div>
   );
 };

@@ -31,8 +31,8 @@ export default function InputModal({ onClose }) {
 
   return (
     <div className="max-w-md w-full mx-auto">
-      <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-        Join a Room
+      <h2 className="font-bold text-xl text-center text-neutral-800 dark:text-neutral-200">
+        Join/Create
       </h2>
       <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
         Enter your Room ID below to join the meeting.
@@ -54,7 +54,7 @@ export default function InputModal({ onClose }) {
           type="submit"
         >
           <span className="flex items-center justify-center gap-2">
-            Click to join <HeadsetIcon />
+            Start Joining <HeadsetIcon />
           </span>
         </button>
       </form>

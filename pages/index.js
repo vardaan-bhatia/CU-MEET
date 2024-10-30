@@ -53,18 +53,18 @@ export default function Home() {
 
         <div className="flex flex-col sm:flex-row gap-5">
           <button
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-gray-200 text-black font-semibold text-lg transition duration-200 hover:bg-transparent hover:text-white hover:shadow-lg"
+            className="flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200 text-black font-semibold text-lg transition duration-200 hover:bg-transparent hover:text-white hover:shadow-lg"
             onClick={openModal}
           >
             <Video className="w-5 h-5" />
-            Join Room
+            Join or Create a Room
           </button>
           <button
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white font-semibold text-lg transition duration-200 hover:bg-transparent hover:shadow-lg"
+            className="flex items-center gap-2 px-5 py-3 rounded-full bg-black text-white font-semibold text-lg transition duration-200 hover:bg-transparent hover:shadow-lg"
             onClick={createRoom}
           >
             <Plus className="w-5 h-5" />
-            Create Room
+            Start Instant Meeting
           </button>
         </div>
       </div>

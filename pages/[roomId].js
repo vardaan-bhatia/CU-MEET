@@ -1,19 +1,20 @@
 import React from "react";
 import { useSocket } from "@/context/socketContext";
 import { usePeer } from "@/hooks/usePeer";
-import { useEffect } from "react";
+import useMediaStream from "@/hooks/useMediaStream";
+import { Player } from "@/components/player";
 
 const Room = () => {
   const socket = useSocket();
+  const { peer, peerID } = usePeer();
 
-  usePeer();
-  useEffect(() => {
-    socket?.on("connect", () => {
-      console.log("socket id", socket.id);
-    });
-  }, [socket]);
+  const { stream } = useMediaStream();
 
-  return <div></div>;
+  return (
+    <div>
+      <Player url={stream} muted={true} playing playerId={peerID} />
+    </div>
+  );
 };
 
 export default Room;

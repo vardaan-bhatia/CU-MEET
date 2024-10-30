@@ -45,7 +45,7 @@ const Navbar = () => {
             className="text-gray-200 font-semibold transition duration-200 hover:underline px-3 py-2 rounded"
             onClick={createRoom}
           >
-            Create Room
+            New Meeting
           </button>
           <a
             href="https://github.com/vardaan-bhatia/CU-MEET"
@@ -82,7 +82,7 @@ const Navbar = () => {
             className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"
             onClick={openModal}
           >
-            Join Room
+            Join or Create Room
           </button>
           <button
             className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"

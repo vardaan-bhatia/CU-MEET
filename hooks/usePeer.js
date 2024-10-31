@@ -33,9 +33,7 @@ export const usePeer = () => {
       const conn = newPeer.connect(newPeerId);
       setConnections((prev) => [...prev, conn]);
       conn.on("open", () => {
-        console.log(
-          `Peer ${peerID} connected to peer ${newPeerId} in room ${roomId}`
-        );
+        console.log(` connected to peer ${newPeerId} in room ${roomId}`);
       });
     });
 

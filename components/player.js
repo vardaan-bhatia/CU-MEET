@@ -4,12 +4,11 @@ export const Player = ({ stream, muted, playing, playerId }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.srcObject = stream; // Set the MediaStream directly
+    if (videoRef.current && stream) {
+      videoRef.current.srcObject = stream;
     }
 
     return () => {
-      // Cleanup function to reset the srcObject when component unmounts
       if (videoRef.current) {
         videoRef.current.srcObject = null;
       }
@@ -17,12 +16,14 @@ export const Player = ({ stream, muted, playing, playerId }) => {
   }, [stream]);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
-      {stream ? (
-        <video ref={videoRef} muted={muted} autoPlay={playing} />
-      ) : (
-        <p>No video stream available</p>
-      )}
+    <div className="relative w-full h-full bg-gray-800 rounded-lg overflow-hidden">
+      <video
+        ref={videoRef}
+        muted={muted}
+        autoPlay={playing}
+        playsInline
+        className="w-full h-full object-cover"
+      />
     </div>
   );
 };

@@ -12,8 +12,6 @@ CU-Meet is a seamless video conferencing platform currently in development. It i
 
 ---
 
----
-
 ## Project Status
 
 **In Progress:** The project is actively being developed, and features are being added continuously. Some functionalities may be incomplete or subject to change.

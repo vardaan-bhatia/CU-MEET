@@ -5,7 +5,7 @@ CU-Meet is a seamless video conferencing platform currently in development. It i
 ![image](https://github.com/user-attachments/assets/e128e1db-6160-4ebd-a9e3-89e644646722)
 
 <div style="text-align: center;">
-  <img src="image.png" alt="flowchart" width="400" height="800">
+  <img src="cu-meet.png" alt="flowchart" width="400" height="800">
 </div>
 
 ## Project Status

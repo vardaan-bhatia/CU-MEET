@@ -1,8 +1,8 @@
-// useMediaStream.js
 import { useState, useEffect, useRef } from "react";
 
 const useMediaStream = () => {
   const [stream, setStream] = useState(null);
+  const [error, setError] = useState(null); // State to store errors
   const isStreamInitialized = useRef(false);
 
   useEffect(() => {
@@ -14,8 +14,9 @@ const useMediaStream = () => {
         });
         console.log("Initializing media stream...");
         setStream(mediaStream);
-      } catch (error) {
-        console.error("Error accessing media devices:", error);
+      } catch (err) {
+        console.error("Error accessing media devices:", err);
+        setError(err); // Set the error state
       }
     };
 
@@ -31,9 +32,9 @@ const useMediaStream = () => {
         console.log("Media stream stopped");
       }
     };
-  }, [stream]);
+  }, []); // Remove 'stream' from the dependency array
 
-  return { stream };
+  return { stream, error }; // Return the stream and error
 };
 
 export default useMediaStream;

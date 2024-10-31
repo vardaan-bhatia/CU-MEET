@@ -82,13 +82,13 @@ const Navbar = () => {
             className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"
             onClick={openModal}
           >
-            Join or Create Room
+            Join Room
           </button>
           <button
             className="text-white font-semibold transition duration-200 hover:underline w-full py-2 rounded"
             onClick={createRoom}
           >
-            Create Room
+            New Meeting
           </button>
           <Modal />
           <a

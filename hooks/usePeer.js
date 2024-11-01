@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Peer from "peerjs";
 import { useRouter } from "next/router";
 import { useSocket } from "@/context/socketContext";
-import useMediaStream from "./useMediaStream";
 
 export const usePeer = () => {
   const [peer, setPeer] = useState(null);
@@ -18,23 +17,18 @@ export const usePeer = () => {
     newPeer.on("open", (id) => {
       setPeerID(id);
       socket?.emit("join-room", roomId, id);
-      console.log(`Your Peer ID ${id} `);
     });
 
     newPeer.on("connection", (conn) => {
       setConnections((prev) => [...prev, conn]);
-      console.log(`New connection established with peer: ${conn.peer}`);
       conn.on("data", (data) => {
-        console.log("Received data from peer:", data);
+        // Handle received data here
       });
     });
 
     socket?.on("user-connected", (newPeerId) => {
       const conn = newPeer.connect(newPeerId);
       setConnections((prev) => [...prev, conn]);
-      conn.on("open", () => {
-        console.log(` connected to peer ${newPeerId} in room ${roomId}`);
-      });
     });
 
     newPeer.on("disconnected", () => console.log("Peer disconnected"));

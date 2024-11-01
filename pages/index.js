@@ -1,4 +1,4 @@
-import Navbar from "@/components/navbar";
+import Navbar from "../components/navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Video, Plus } from "lucide-react"; // Importing icons
 import { people } from "@/lib/people";

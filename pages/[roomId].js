@@ -9,7 +9,7 @@ import {
   VideoOff,
   Mic,
   MicOff,
-  PhoneOff,
+  Phone,
   UserCircle,
   MessageCircle,
 } from "lucide-react";
@@ -240,14 +240,12 @@ const Room = () => {
         >
           {isAudioMuted ? <MicOff /> : <Mic />}
         </button>
-        <button className="bg-gray-700 text-white p-3 rounded-full hover:bg-gray-600 transition-colors">
-          <MessageCircle />
-        </button>
+
         <button
           onClick={endCall}
           className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-colors"
         >
-          <PhoneOff />
+          <Phone />
         </button>
       </div>
     </div>

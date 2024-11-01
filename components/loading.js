@@ -10,7 +10,7 @@ export const Loading = () => {
     >
       {" "}
       {/* Center the text and set color */}
-      <FadeLoader color="#0290F7" size={60} />{" "}
+      <FadeLoader color="#fff" size={60} />{" "}
     </div>
   );
 };

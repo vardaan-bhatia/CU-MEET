@@ -144,7 +144,7 @@ const Room = () => {
     if (peer) {
       peer.destroy();
     }
-    router.push("/sessionEnd");
+    router.push("/sessionend");
   };
 
   if (!stream) {

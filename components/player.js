@@ -1,18 +1,20 @@
 import React, { useEffect, useRef } from "react";
 
-export const Player = ({ stream, muted, playing, playerId }) => {
+export const Player = ({ stream, muted, playing }) => {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    const videoElement = videoRef.current;
+
     // Attach the media stream to the video element when the component mounts
-    if (videoRef.current && stream) {
-      videoRef.current.srcObject = stream;
+    if (videoElement && stream) {
+      videoElement.srcObject = stream;
     }
 
     // Clean up by detaching the media stream when the component unmounts
     return () => {
-      if (videoRef.current) {
-        videoRef.current.srcObject = null;
+      if (videoElement) {
+        videoElement.srcObject = null;
       }
     };
   }, [stream]); // Dependency array ensures this effect only runs when the stream changes

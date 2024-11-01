@@ -36,7 +36,7 @@ const Room = () => {
       videoMuted: isVideoMuted,
       audioMuted: isAudioMuted,
     });
-  }, [socket, peer, stream, roomId, peerID]);
+  }, [socket, peer, stream, roomId, peerID, isVideoMuted, isAudioMuted]);
 
   useEffect(() => {
     if (!socket || !peer || !stream) return;

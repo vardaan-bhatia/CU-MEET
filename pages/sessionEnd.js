@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Star, Send, Home, Heart } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import ThankYou from "@/components/thankyou";
+import ThankYou from "@/components/Thankyou";
 
 const SessionEnd = () => {
   const router = useRouter();

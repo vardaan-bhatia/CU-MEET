@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Star, Send, Home, Heart } from "lucide-react";
+import { Star, Send, Home } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import ThankYou from "@/components/Thankyou";
+import ThankYou from "@/components/thankyou";
 
 const SessionEnd = () => {
   const router = useRouter();

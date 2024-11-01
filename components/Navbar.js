@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Github, Menu, XCircle } from "lucide-react"; // Importing GitHub and Menu icons from Lucide
-import Modal from "./Modal";
+import Modal from "./modal";
 import { useModal } from "@/context/modalContext";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";

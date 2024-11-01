@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSocket } from "@/context/socketContext";
 import { usePeer } from "@/hooks/usePeer";
 import useMediaStream from "@/hooks/useMediaStream";
-import { Player } from "@/components/Player";
-import { Loading } from "@/components/Loading";
+import { Player } from "@/components/player";
+import { Loading } from "@/components/loading";
 import {
   Video,
   VideoOff,

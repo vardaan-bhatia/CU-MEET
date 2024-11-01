@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Video, Plus } from "lucide-react"; // Importing icons
 import { people } from "@/lib/people";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useModal } from "@/context/modalContext";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modal";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 

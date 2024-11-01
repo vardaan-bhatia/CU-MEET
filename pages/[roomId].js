@@ -36,7 +36,7 @@ const Room = () => {
       videoMuted: isVideoMuted,
       audioMuted: isAudioMuted,
     });
-  }, [socket, peer, stream, roomId, peerID, isVideoMuted, isAudioMuted]);
+  }, [socket, peer, stream, roomId, peerID]);
 
   useEffect(() => {
     if (!socket || !peer || !stream) return;
@@ -240,7 +240,6 @@ const Room = () => {
         >
           {isAudioMuted ? <MicOff /> : <Mic />}
         </button>
-
         <button
           onClick={endCall}
           className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-colors"

@@ -223,7 +223,7 @@ const Room = () => {
       </div>
 
       {/* Controls */}
-      <div className="absolute bottom-10 gap-3 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-20">
+      <div className="absolute bottom-14 sm:bottom-10 gap-3 left-1/2 transform -translate-x-1/2 flex items-center space-x-4 z-20">
         <button
           onClick={toggleVideo}
           className={`bg-gray-700 text-white p-3 rounded-full hover:bg-gray-600 transition-colors ${

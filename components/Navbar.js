@@ -5,7 +5,7 @@ import { useModal } from "@/context/modalContext";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 
-const Navbar = () => {
+export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { openModal } = useModal();
   const router = useRouter();
@@ -104,5 +104,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

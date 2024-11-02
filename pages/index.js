@@ -26,7 +26,7 @@ export default function Home() {
         <h1 className="text-4xl mt-12 sm:mt-0 font-bold text-white mb-2 sm:mb-4 md:text-7xl max-w-7xl">
           Welcome to CU-Meet, the Seamless Video Conferencing Platform
         </h1>
-        <p className="text-base sm:text-xl text-gray-200 max-w-4xl mb-8 sm:mb-16 mt-2">
+        <p className="text-base sm:text-xl text-gray-200 max-w-4xl mb-4 sm:mb-16 mt-1 sm:mt-2">
           Connect, collaborate, and communicate effortlessly with friends and
           colleagues on a platform designed for all your video conferencing
           needs.
@@ -52,7 +52,7 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-5">
+        <div className="flex flex-col sm:flex-row sm:gap-5 gap-3">
           <button
             className="flex items-center gap-2 px-5 py-3 rounded-full bg-gray-200 text-black font-semibold text-sm sm:text-lg transition duration-200 hover:bg-transparent hover:text-white hover:shadow-lg"
             onClick={openModal}

@@ -23,16 +23,16 @@ export default function Home() {
       <Navbar />
       <Modal />
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <h1 className="text-4xl mt-10 sm:mt-0 font-bold text-white mb-2 sm:mb-4 md:text-7xl max-w-7xl">
+        <h1 className="text-4xl mt-12 sm:mt-0 font-bold text-white mb-2 sm:mb-4 md:text-7xl max-w-7xl">
           Welcome to CU-Meet, the Seamless Video Conferencing Platform
         </h1>
-        <p className="text-base sm:text-xl text-gray-200 max-w-4xl mb-16 mt-2">
+        <p className="text-base sm:text-xl text-gray-200 max-w-4xl mb-8 sm:mb-16 mt-2">
           Connect, collaborate, and communicate effortlessly with friends and
           colleagues on a platform designed for all your video conferencing
           needs.
         </p>
 
-        <div className="mb-8 sm:mb-16">
+        <div className="mb-6 sm:mb-16">
           <div className="flex sm:flex-row gap-2 sm:gap-0 flex-col mb-2 items-center justify-center">
             <div className="flex flex-row">
               <AnimatedTooltip items={people} />

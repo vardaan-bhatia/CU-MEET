@@ -13,7 +13,7 @@ module.exports = {
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./styles/**/*.{css}",
+    "./styles/**/*.css",
   ],
   prefix: "",
   theme: {

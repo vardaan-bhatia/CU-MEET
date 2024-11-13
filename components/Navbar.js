@@ -18,6 +18,7 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const handleRefresh = () => {
     window.location.reload();
   };

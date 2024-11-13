@@ -22,7 +22,7 @@ export default function Home() {
     <AuroraBackground>
       <Navbar />
       <Modal />
-      <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-6 sm:px-12">
         <h1 className="text-4xl mt-6 sm:mt-0 font-bold text-white mb-2 sm:mb-4 md:text-7xl max-w-7xl">
           Welcome to CU-Meet, the Seamless Video Conferencing Platform
         </h1>

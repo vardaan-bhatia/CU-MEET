@@ -3,20 +3,14 @@ import { useRouter } from "next/navigation";
 import { Star, Send, Home } from "lucide-react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import ThankYou from "@/components/thankyou";
+import { StarRating } from "@/components/StarRating";
 
 const SessionEnd = () => {
   const router = useRouter();
-  const [rating, setRating] = useState(0);
-  const [hoveredRating, setHoveredRating] = useState(0);
-  const [feedback, setFeedback] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmitFeedback = () => {
     setIsSubmitted(true);
-    setTimeout(() => {
-      setFeedback("");
-      setRating(0);
-    }, 2000);
   };
 
   if (isSubmitted) {
@@ -37,28 +31,10 @@ const SessionEnd = () => {
             </p>
 
             <div className="flex justify-center space-x-2 mb-8">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <button
-                  key={star}
-                  onMouseEnter={() => setHoveredRating(star)}
-                  onMouseLeave={() => setHoveredRating(0)}
-                  onClick={() => setRating(star)}
-                  className="transform hover:scale-110 transition-all"
-                >
-                  <Star
-                    className={`w-8 h-8 ${
-                      star <= (hoveredRating || rating)
-                        ? "fill-yellow-400 text-yellow-400"
-                        : "text-gray-500"
-                    } transition-colors`}
-                  />
-                </button>
-              ))}
+              <StarRating size={5} />
             </div>
 
             <textarea
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
               placeholder="Share your thoughts with us..."
               className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 mb-6 focus:outline-none focus:ring-2 focus:ring-white resize-none border border-gray-800"
               rows="3"
